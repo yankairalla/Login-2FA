@@ -32,12 +32,12 @@ router.post('/', async (req, res) => {
         const token = jwt.sign({ id, email }, secret_jwt);
         await sendgrid.send({
             to: email,
-            from: 'yan@hastedesign.com.br',
-            subject: 'Envio de codigo de confirmação',
-            html: `<p>Olá, seu codigo de confirmação é:
-            <br/> <strong>${token}</strong>,
+            from: 'marina.lopes2@fatec.sp.gov.br',
+            subject: 'Código de verificação',
+            html: `<p>Olá, este é seu código de verificação:
+            <br/> <strong>${token}</strong>
             <br/> 
-            vá até o site e confirme.</p>`
+            Copie este código, vá até o site e cole ele no campo indicado como "Código de verificação.</p>`
         })
 
 
